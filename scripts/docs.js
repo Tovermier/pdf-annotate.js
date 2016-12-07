@@ -1,4 +1,0 @@
-./scripts/shared
-cp -rf shared/ docs/shared/
-
-MINIFY=1 webpack --config ./webpack.web.js --content-base web/
