@@ -1,5 +1,3 @@
-#!/bin/bash
-
 ./scripts/shared
 cp -rf ./shared/ ./sandbox/shared/
 

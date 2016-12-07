@@ -5,7 +5,9 @@
   "main": "dist/pdf-annotate.js",
   "scripts": {
     "test": "karma start --single-run",
-    "start": "./scripts/web",
+    "start": "node scripts/web.js && npm run start:web",
+    "start:web" : "webpack-dev-server --inline --config ./webpack.web.js --content-base docs/",
+    "prestart": "node scripts/shared.js",
     "build": "MINIFY=1 webpack",
     "coveralls": "cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
@@ -49,6 +51,7 @@
     "simulant": "^0.2.0",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
+    "shelljs": "~0.4.0",
     "twitter-text": "^1.13.4",
     "webpack": "1.12.14",
     "webpack-dev-server": "1.14.1"
